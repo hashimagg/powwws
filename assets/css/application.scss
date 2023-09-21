@@ -1,0 +1,117 @@
+@font-face {
+  font-family: 'alagardmedium';
+  src: url('~/assets/fonts/alagard.woff2') format('woff2'),
+  url('~/assets/fonts/alagard.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'pixel_operatorregular';
+  src: url('~/assets/fonts/pixeloperator.woff2') format('woff2'),
+  url('~/assets/fonts/pixeloperator.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-weight: normal;
+  font-style: normal;
+}
+
+body::before {
+  background-image: url('~/assets/images/noise.gif');
+  background-repeat: repeat;
+  background-position: center center;
+  bottom: 0;
+  content: '';
+  display: block;
+  left: 0;
+  opacity: .05;
+  pointer-events: none;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 50;
+}
+
+.pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%239C92AC' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.game {
+  &__world {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.router-link-active {
+  @apply text-teal-500;
+}
+
+#pest.router-link-active {
+  @apply text-red-500;
+}
+
+#bios.router-link-active {
+  @apply text-green-500;
+}
+
+#necro.router-link-active {
+  @apply text-purple-500;
+}
+
+.pixelated {
+  image-rendering: pixelated;
+}
+
+output {
+  clear: both;
+  width: 100%;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+// output span,
+// output a {
+//   @apply text-teal-500;
+// }
+
+output a {
+  @apply underline;
+  @apply pointer-events-auto;
+}
+
+.prompt {
+  box-orient: vertical;
+  box-pack: center;
+  @apply text-teal-500;
+  display: block;
+  white-space: nowrap;
+}
+
+.ls-files {
+  height: 45px;
+  column-width: 100px;
+}
+
+.cmdline {
+  background-color: transparent;
+  border: none;
+  color: inherit;
+  margin: 0;
+  outline: 0 none;
+  width: 100%;
+  font-size: 16px;
+  line-height: 16px;
+}
+
+#console-window {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 16px;
+  line-height: 16px;
+}
