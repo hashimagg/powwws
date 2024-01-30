@@ -1,6 +1,6 @@
 # Hashima Islands 端島 — POWWWS Website
 
-Website for POWWWS Laboratory on Hashima Islands, a Modded Map inspired by Hashima, commonly called Gunkanjima (meaning Battleship Island), a abandoned island off Nagasaki.
+Website for POWWWS Laboratory on Hashima Islands, a Modded Map inspired by Hashima, commonly called Gunkanjima (meaning Battleship Island), an abandoned island off Nagasaki.
 
 #### [Visit Website 🡥](https://poww.ws)
 
