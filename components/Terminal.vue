@@ -7,13 +7,13 @@
         <input ref="inputContainer" class="text-gray-200 cmdline" autofocus />
       </div>
     </div>
-    <audio id="terminal-welcome" controls class="invisible absolute w-0 h-0">
+    <audio id="terminal-welcome" controls class="invisible absolute w-0 h-0" tabindex="-1">
       <source src="/terminal-welcome.ogg" type="audio/ogg" />
     </audio>
-    <audio id="terminal-error" controls class="invisible absolute w-0 h-0">
+    <audio id="terminal-error" controls class="invisible absolute w-0 h-0" tabindex="-1">
       <source src="/terminal-error.ogg" type="audio/ogg" />
     </audio>
-    <audio id="terminal-success" controls class="invisible absolute w-0 h-0">
+    <audio id="terminal-success" controls class="invisible absolute w-0 h-0" tabindex="-1">
       <source src="/terminal-success.ogg" type="audio/ogg" />
     </audio>
   </div>

@@ -13,16 +13,16 @@
       {{ label }}
     </span>
     <slot />
-    <audio :data-id="id + '-focus'" controls class="invisible absolute w-0 h-0">
+    <audio :data-id="id + '-focus'" controls class="invisible absolute w-0 h-0" tabindex="-1">
       <source src="/main-focus.ogg" type="audio/ogg" />
     </audio>
-    <audio :data-id="id + '-hover'" controls class="invisible absolute w-0 h-0">
+    <audio :data-id="id + '-hover'" controls class="invisible absolute w-0 h-0" tabindex="-1">
       <source src="/footer-hover.ogg" type="audio/ogg" />
     </audio>
-    <audio :data-id="id + '-click'" controls class="invisible absolute w-0 h-0">
+    <audio :data-id="id + '-click'" controls class="invisible absolute w-0 h-0" tabindex="-1">
       <source src="/main-click.ogg" type="audio/ogg" />
     </audio>
-    <audio :data-id="id + '-release'" controls class="invisible absolute w-0 h-0">
+    <audio :data-id="id + '-release'" controls class="invisible absolute w-0 h-0" tabindex="-1">
       <source src="/main-release.ogg" type="audio/ogg" />
     </audio>
   </NuxtLink>

@@ -5,7 +5,7 @@
     class="flex flex-col xl:flex-row min-h-screen bg-slate-900 max-w-14xl border-r border-gray-900"
   >
     <slot />
-    <audio :data-id="id + '-ambient'" controls class="invisible absolute w-0 h-0" loop>
+    <audio :data-id="id + '-ambient'" controls class="invisible absolute w-0 h-0" tabindex="-1" loop>
       <source src="/main-ambient.ogg" type="audio/ogg" />
     </audio>
   </div>
