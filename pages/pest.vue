@@ -31,6 +31,9 @@
         </div>
       </div>
     </CardDetail>
+    <CardImage class="col-span-2">
+      <img src="~assets/images/pest-lab.gif" width="2560" height="1440" alt="POWWWS Laboratory — PEST"/>
+    </CardImage>
     <Address />
   </Content>
 </template>

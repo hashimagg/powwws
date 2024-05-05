@@ -23,9 +23,9 @@
     constructor(inputContainer, outputContainer) {
       this.cmdLine_ = inputContainer
       this.output_ = outputContainer
-      this.VERSION_ = '0.1'
-      this.CMDS_ = ['clear', 'date', 'help', 'login', 'version']
-      this.RESEARCHES_ = ['main', 'pest', 'bios', 'necro']
+      this.VERSION_ = '0.2'
+      this.CMDS_ = ['clear', 'cctv', 'date', 'help', 'login', 'version']
+      this.RESEARCHES_ = ['pest', 'bios', 'necro']
       this.fs_ = null
       this.cwd_ = null
       this.history_ = []
@@ -112,6 +112,35 @@
           this.playAudio('terminal-success')
           return
 
+          // cctv
+          case 'cctv':
+          var option = args[0];
+          switch(option) {
+            case 'necro':
+              this.output('Initializing CCTV NECRO Network<br/><br/>')
+              this.playAudio('terminal-success')
+              this.output('<div class="grid grid-cols-2 gap-px font-sans uppercase"><div class="relative"><span class="text-white absolute px-4 py-2">NECRO_ENTRANCE</span><span class="text-yellow-500 absolute px-4 py-2 right-0">CAM1</span><span class="text-white absolute px-4 py-2 bottom-0">acefb6d1-c7b5-49e9</span><img src="/images/cctv-necro-1.gif" width="600" height="338" alt="POWWWS Laboratory — NECRO"/></div><div class="relative"><span class="text-white absolute px-4 py-2">NECRO_PATH</span><span class="text-yellow-500 absolute px-4 py-2 right-0">CAM2</span><span class="text-white absolute px-4 py-2 bottom-0">f36cfb07-180d-4fc8</span><img src="/images/cctv-necro-2.gif" width="600" height="338" alt="POWWWS Laboratory — NECRO"/></div></div><br/><br/>')
+              break
+            case 'pest':
+              this.output('Initializing CCTV PEST Network<br/><br/>')
+              this.playAudio('terminal-success')
+              this.output('<div class="grid grid-cols-2 gap-px font-sans uppercase"><div class="relative"><span class="text-white absolute px-4 py-2">PEST_ENTRANCE</span><span class="text-yellow-500 absolute px-4 py-2 right-0">CAM1</span><span class="text-white absolute px-4 py-2 bottom-0">f7ca4a10-577f-4523</span><img src="/images/cctv-pest-1.gif" width="600" height="338" alt="POWWWS Laboratory — PEST"/></div><div class="relative"><span class="text-white absolute px-4 py-2">PEST_FLOOR2</span><span class="text-yellow-500 absolute px-4 py-2 right-0">CAM2</span><span class="text-white absolute px-4 py-2 bottom-0">ac3301e3-6268-4e44</span><img src="/images/cctv-pest-2.gif" width="600" height="338" alt="POWWWS Laboratory — PEST"/></div></div><br/><br/>')
+              break
+            case 'bios':
+              this.output('Initializing CCTV BIOS Network<br/><br/>')
+              this.playAudio('terminal-success')
+              this.output('<div class="grid grid-cols-2 gap-px font-sans uppercase"><div class="relative"><span class="text-white absolute px-4 py-2">BIOS_ENTRANCE</span><span class="text-yellow-500 absolute px-4 py-2 right-0">CAM1</span><span class="text-white absolute px-4 py-2 bottom-0">9707b26a-55c2-42f3</span><img src="/images/cctv-bios-1.gif" width="600" height="338" alt="POWWWS Laboratory — BIOS"/></div><div class="relative"><span class="text-white absolute px-4 py-2">BIOS_FLOOR2</span><span class="text-yellow-500 absolute px-4 py-2 right-0">CAM2</span><span class="text-white absolute px-4 py-2 bottom-0">960ec45a-5acf-4e70</span><img src="/images/cctv-bios-2.gif" width="600" height="338" alt="POWWWS Laboratory — BIOS"/></div></div><br/><br/>')
+              break
+            default:
+              var research = args.join(' ')
+              if (!research) {
+                this.output(['usage: ', cmd, ' ' + this.RESEARCHES_.join('|')].join('') + '<br/><br/>')
+                this.playAudio('terminal-success')
+              }
+              break
+          }
+          break;
+
           // date
           case 'date':
           this.output(this.getCurrentDate() + '<br/><br/>')
@@ -188,7 +217,7 @@
     }
 
     initFS(persistent, size) {
-      this.output('╔════════════════════════════════════════════════════════╗<br/>║&nbsp;██████&nbsp;&nbsp;&nbsp;██████&nbsp;&nbsp;██&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;██&nbsp;██&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;██&nbsp;██&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;██&nbsp;███████&nbsp;║<br/>║&nbsp;██&nbsp;&nbsp;&nbsp;██&nbsp;██&nbsp;&nbsp;&nbsp;&nbsp;██&nbsp;██&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;██&nbsp;██&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;██&nbsp;██&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;██&nbsp;██&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;║<br/>║&nbsp;██████&nbsp;&nbsp;██&nbsp;&nbsp;&nbsp;&nbsp;██&nbsp;██&nbsp;&nbsp;█&nbsp;&nbsp;██&nbsp;██&nbsp;&nbsp;█&nbsp;&nbsp;██&nbsp;██&nbsp;&nbsp;█&nbsp;&nbsp;██&nbsp;███████&nbsp;║<br/>║&nbsp;██&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;██&nbsp;&nbsp;&nbsp;&nbsp;██&nbsp;██&nbsp;███&nbsp;██&nbsp;██&nbsp;███&nbsp;██&nbsp;██&nbsp;███&nbsp;██&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;██&nbsp;║<br/>║&nbsp;██&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;██████&nbsp;&nbsp;&nbsp;███&nbsp;███&nbsp;&nbsp;&nbsp;███&nbsp;███&nbsp;&nbsp;&nbsp;███&nbsp;███&nbsp;&nbsp;███████&nbsp;║<br/>╠════════════════════════════════════════════════════════╣<br/>║&nbsp;LABORATORY&nbsp;TERMINAL&nbsp;&nbsp;&nbsp&nbsp;<span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + this.VERSION_ + '&nbsp;║<br/>╚════════════════════════════════════════════════════════╝<br/><br/>')
+      this.output('╔══════════════════════════════════╗<br/>║&nbsp;POWWWS LABORATORY&nbsp;TERMINAL&nbsp;&nbsp;&nbsp' + this.VERSION_ + '&nbsp;║<br/>╚══════════════════════════════════╝<br/><br/>')
       this.output('<span>' + this.getCurrentDate() + '</span><br/>')
       this.output('Type "help" to list all available commands<br/><br/>')
       this.playAudio('terminal-welcome')

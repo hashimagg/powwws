@@ -31,6 +31,9 @@
         </div>
       </div>
     </CardDetail>
+    <CardImage class="col-span-2">
+      <img src="~assets/images/bios-lab.gif" width="2560" height="1440" alt="POWWWS Laboratory — BIOS"/>
+    </CardImage>
     <Address />
   </Content>
 </template>

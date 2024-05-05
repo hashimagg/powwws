@@ -31,6 +31,9 @@
         </div>
       </div>
     </CardDetail>
+    <CardImage class="col-span-2">
+      <img src="~assets/images/necro-lab.gif" width="2560" height="1440" alt="POWWWS Laboratory — NECRO"/>
+    </CardImage>
     <Address />
   </Content>
 </template>

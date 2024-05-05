@@ -4,6 +4,7 @@
       <Terminal />
     </CardText>
   </Content>
+
 </template>
 <script>
   export default {
