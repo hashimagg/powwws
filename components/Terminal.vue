@@ -1,5 +1,5 @@
 <template>
-  <div id="console-window" class="bg-zinc-900/75 rounded-lg px-2 h-full">
+  <div id="console-window" class="bg-zinc-900/75 rounded-lg px-2 h-full border border-zinc-700">
     <output ref="outputContainer" class="text-gray-200" />
     <div id="command-line" class="flex space-x-2 text-gray-200">
       <div class="prompt mt-0.5">$&gt;</div>
